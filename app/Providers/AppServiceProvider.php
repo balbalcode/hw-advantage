@@ -19,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
 
         if (config('app.env') === 'production') {
             URL::forceScheme('https');
+            Vite::useScriptTagAttributes([
+                'crossorigin' => 'anonymous',
+            ]);
+            Vite::useStyleTagAttributes([
+                'crossorigin' => 'anonymous',
+            ]);
         }
     }
 }
