@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Vite::prefetch(concurrency: 3);
 
-        if (config('app.env') === 'production') {
+        if (request()->getHost() === 'hw-advantage-production.up.railway.app') {
             URL::forceScheme('https');
             Vite::useScriptTagAttributes([
                 'crossorigin' => 'anonymous',
