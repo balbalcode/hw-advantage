@@ -7,6 +7,7 @@ export default defineConfig({
         laravel({
             input: 'resources/js/app.js',
             refresh: true,
+            detectTls: (process.env.APP_ENV === 'production') ? 'hw-advantage-production.up.railway.app' : null,
         }),
         vue({
             template: {
